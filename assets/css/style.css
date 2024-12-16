@@ -2,7 +2,8 @@
     /* Vermelho */
     --icon-color: #E74C3C;
 }
-.light-theme{
+
+.light-theme {
     /* Modo claro */
     --primary-color: #2C3E50;
     /* Azul-escuro */
@@ -19,24 +20,36 @@
     /* Azul brilhante */
     --text-color: #333333;
     /* Texto para tema claro */
-    --hover-color: #16A085; /* Verde-água vibrante */
+    --hover-color: #16A085;
+    /* Verde-água vibrante */
 }
 
-.dark-theme{
+.dark-theme {
     /* Modo escuro */
-    --primary-color: #FFFFFF; /* Branco puro para detalhes principais */
-    --primary-bg-color: #1A1A1A; /* Preto suave para o fundo */
-    --secondary-bg-color: #2E2E2E; /* Cinza escuro para contrastar com o fundo */
-    --border-color: #444444; /* Cinza médio para bordas suaves */
+    --primary-color: #FFFFFF;
+    /* Branco puro para detalhes principais */
+    --primary-bg-color: #1A1A1A;
+    /* Preto suave para o fundo */
+    --secondary-bg-color: #2E2E2E;
+    /* Cinza escuro para contrastar com o fundo */
+    --border-color: #444444;
+    /* Cinza médio para bordas suaves */
 
-    --title-color: #F5F5F5; /* Branco-quase-puro para títulos */
-    --link-color: #00ADB5; /* Azul-verde vibrante para links */
-    --text-color: #CCCCCC; /* Cinza-claro para texto */
-    --hover-color: #1F618D; /* Azul-profundo suave */
+    --title-color: #F5F5F5;
+    /* Branco-quase-puro para títulos */
+    --link-color: #00ADB5;
+    /* Azul-verde vibrante para links */
+    --text-color: #CCCCCC;
+    /* Cinza-claro para texto */
+    --hover-color: #1F618D;
+    /* Azul-profundo suave */
 }
 
 /* Generic Styles */
-p{
+p,
+span,
+li,
+a {
     font-family: "Inter", sans-serif;
     color: var(--text-color);
     font-size: 1.25rem;
@@ -67,6 +80,11 @@ body {
 i {
     color: var(--primary-color);
     cursor: pointer;
+}
+
+i:hover {
+    transition: 0.4s;
+    opacity: 0.5;
 }
 
 .menu {
@@ -101,6 +119,11 @@ i {
     cursor: pointer;
 }
 
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 11px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+}
+
 b {
     font-weight: 400;
 }
@@ -124,7 +147,7 @@ header {
 
 header .header-brand {
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
     align-items: center;
     width: 100%;
 }
@@ -147,6 +170,7 @@ header .brand-logo {
 .header-nav {
     display: none;
 }
+
 /* Menu mobile*/
 
 .menu-mobile {
@@ -160,10 +184,12 @@ header .brand-logo {
 .menu-item {
     width: 100%;
 }
-.menu-item span{
+
+.menu-item span {
     font-size: 0.9rem;
     font-family: "inter", sans-serif;
 }
+
 .menu-mobile .menu-link {
     display: flex;
     flex-direction: column;
@@ -176,8 +202,8 @@ header .brand-logo {
 .active .menu-text,
 .menu-link:hover .menu-icon,
 .menu-link:hover .menu-text {
+    transition: 0.4s;
     color: var(--primary-color);
-    font-weight: 600;
 }
 
 /* Main */
@@ -197,7 +223,7 @@ main {
     text-transform: uppercase;
 }
 
-.main-content1 {
+.main-content {
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
@@ -240,6 +266,14 @@ main {
     border-radius: 50rem;
 }
 
+.technologies-logo {
+    height: 2.4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
 /* footer */
 footer {
     display: flex;
@@ -250,17 +284,28 @@ footer {
 
 /* Media Query */
 @media (min-width: 760px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    p {
+        font-size: 1.5rem
+    }
+
     header {
         border-bottom: 1px solid var(--border-color);
         padding: 1rem 6rem;
         background: var(--primary-bg-color);
     }
-    .header-nav-mobile{
+
+    .header-nav-mobile {
         display: none;
     }
+
     .header-nav {
         display: flex;
     }
+
     .header-nav,
     .header-toggle {
         min-width: 45%;
@@ -268,13 +313,29 @@ footer {
 
     /* Main */
 
-    .main-content1 {
+    .main-content {
         align-items: flex-start;
         padding: 8rem 6rem 4rem 6rem;
     }
 
-    .skills {
+    .technologies {
         padding: 6.25rem 6rem 2rem 6rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .technologies-logo {
+        height: 2.4rem;
+    }
+
+    .technologies h2 {
+        font-size: 2.5rem;
+        width: 60%;
+        font-weight: normal;
+    }
+
+    .technologies-list {
+        flex-wrap: nowrap;
     }
 
     .btn {
@@ -282,11 +343,26 @@ footer {
     }
 }
 
-@media (min-width: 1400px) { 
-    header {
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 6.25rem;
+    }
+
+    .technologies h2 {
+        font-size: 2.3rem;
+        width: 60%;
+        font-weight: normal;
+    }
+
+    h3 {
+        font-size: 3.25rem;
+    }
+
+    .header {
         padding: 1rem 15rem;
     }
-    .btn {
-        width: auto;
+
+    .technologies{
+        padding: 10rem 15rem;
     }
 }
