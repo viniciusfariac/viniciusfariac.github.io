@@ -271,7 +271,6 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 /* footer */
@@ -324,8 +323,13 @@ footer {
         justify-content: space-between;
     }
 
+    .technologies-item {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
     .technologies-logo {
-        height: 2.4rem;
+        height: 2.9rem;
     }
 
     .technologies h2 {
@@ -352,6 +356,15 @@ footer {
         font-size: 2.3rem;
         width: 60%;
         font-weight: normal;
+    }
+
+    .technologies-item {
+        height: 6rem;
+        width: 6rem;
+    }
+
+    .technologies-logo {
+        height: 4rem;
     }
 
     h3 {
