@@ -1,6 +1,7 @@
 :root {
     /* Vermelho */
     --icon-color: #E74C3C;
+    filter: var(--filter);
 }
 
 .light-theme {
@@ -22,6 +23,7 @@
     /* Texto para tema claro */
     --hover-color: #16A085;
     /* Verde-água vibrante */
+    --filter: invert(1) brightness(0.3) contrast(1.2);
 }
 
 .dark-theme {
@@ -43,6 +45,8 @@
     /* Cinza-claro para texto */
     --hover-color: #1F618D;
     /* Azul-profundo suave */
+
+    --filter: invert(50%);
 }
 
 /* Generic Styles */
@@ -59,9 +63,14 @@ a {
 h1,
 h2,
 h3 {
-    font-family: "Legue Spartan", sans-serif;
+    font-family: "League Spartan", sans-serif;
     color: var(--title-color);
     text-transform: uppercase;
+}
+
+h2,
+h3 {
+    font-weight: 300;
 }
 
 a {
@@ -229,6 +238,8 @@ main {
     gap: 1.3rem;
 }
 
+/* Section Tecnologies */
+
 .technologies {
     display: flex;
     flex-direction: column;
@@ -271,6 +282,63 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    filter: var(--filter);
+}
+
+/* Projects */
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.projects h2 {
+    text-align: center;
+}
+
+.projects-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-cover {
+    border-radius: 0.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: var(--title-color);
+}
+
+.card-list {
+    margin-left: 1rem;
+}
+
+.card-item {
+    list-style: disc;
+}
+
+.card-buttons {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 /* footer */
@@ -321,15 +389,16 @@ footer {
         padding: 6.25rem 6rem 2rem 6rem;
         flex-direction: row;
         justify-content: space-between;
+        overflow: hidden;
     }
 
     .technologies-item {
-        width: 4.5rem;
-        height: 4.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
     }
 
     .technologies-logo {
-        height: 2.9rem;
+        height: 2.5rem;
     }
 
     .technologies h2 {
